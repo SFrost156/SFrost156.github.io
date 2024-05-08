@@ -1,47 +1,109 @@
 <!DOCTYPE html>
 <html lang="es_CO">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="/Style/style2.css">
-    <link rel="icon" href="/Resource/icons/image.png">
+    <link rel="icon" href="/Resource/icons/logo.png">
 
-    
-    <title>REGISTRARSE</title>
-
+    <title>Database Registro</title>
 </head>
 
 <body>
 
-    <div class="contenedor">
-
-        <h2>Registro de Usuario</h2>
-
-        <h3>Usuario</h3>
-        <input type="text" id="email" placeholder="Email"> 
-
-        <h3>Confirmar Usuario</h3>
-        <input type="text" id="email2" placeholder="Confirmar Email"> 
-
-        <h3>Contraseña</h3>
-        <input type="password" id="password" placeholder="Contraseña"> 
-        
-        <h3>Confirmar Contraseña</h3>
-        <input type="password" id="password2" placeholder="Confirmar Contraseña"> 
-
-        <button id="rgsbtn" class="button-singup" type="submit">Registrarse</button> 
-        <button type="button" id="show-password">Mostrar contraseña</button>
-        <button id="exitbtn" class="button-exit" type="submit">Iniciar Sesión</button> 
-        
-
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h1 class="text-center">Registro de Usuario</h1>
+              </div>
+              <div class="card-body">
+                <form id="LogUp-Form">
+                    <div class="form-group">
+                        <h3>Nombres Completos</h3>
+                        <input type="text" id="edtnom" class="form-control" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Apellidos Completos</h3>
+                        <input type="text" id="edtape" class="form-control" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Fecha de Nacimiento</h3>
+                        <input type="date" id="edtfecha" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Cédula</h3>
+                        <input type="text" id="edtcc" class="form-control" placeholder="Ingresa tu número de cédula" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Estado Civil</h3>
+                        <input type="text" id="edtstc" class="form-control" placeholder="Ingresa tu estado civil" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Tipo de Sangre [RH]</h3>
+                        <select id="edtrh" required>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h3>Género</h3>
+                        <select id="edtgnr" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h3>Teléfono</h3>
+                        <input type="tel" id="edttlf" class="form-control" placeholder="Ingresa tu número de teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Dirección</h3>
+                        <input type="text" id="edtdirec" class="form-control" placeholder="Ingresa tu dirección" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Correo Electrónico</h3>
+                        <input type="email" id="edtemail" class="form-control" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                    <div class="alert alert-danger d-none" id="emailAlert" role="alert">Por favor ingresa tu correo electrónico.</div>
+                    <div class="form-group">
+                        <h3>Confirmar Correo Electrónico</h3>
+                        <input type="email" id="confirmEmail" class="form-control" placeholder="Confirma tu correo electrónico" required>
+                    </div>
+                    <div class="alert alert-danger d-none" id="confirmEmailAlert" role="alert">Por favor confirma tu correo electrónico.</div>
+                    <div class="form-group">
+                        <h3>Contraseña</h3>
+                        <input type="password" id="password" class="form-control" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    <div class="alert alert-danger d-none" id="passwordAlert" role="alert">Por favor ingresa tu contraseña.</div>
+                    <div class="form-group">
+                        <h3>Confirmar Contraseña</h3>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirma tu contraseña" required>
+                    </div>
+                    <div class="alert alert-danger d-none" id="confirmPasswordAlert" role="alert">Por favor confirma tu contraseña.</div>
+                    <button id="rgsbtn" class="btn btn-primary" type="submit">Registrarse</button> <br>
+                    <button type="button" id="show-password" class="btn btn-secondary">Mostrar contraseña</button> <br>
+                    <div class="mt-3 text-center">
+                        <button href="/index.html" id="exitbtn" class="btn btn-danger">Iniciar Sesión</button> <br>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <script type="module" src="/Controller/registro.js"></script>
-    <script type="module" src="/Controller/verification.js"></script>
+    <script type="module" src="/Controller/add_users.js"></script>
 
 </body>
-
-
 </html>

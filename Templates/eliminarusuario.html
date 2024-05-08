@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrar Usuario</title>
+
+    <link rel="stylesheet" href="/Style/style4.css">
+    <link rel="icon" href="/Resource/icons/logo.png">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Borrar Usuario</h3>
+                        <form id="DeleteUser-Form">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico" required>
+                                <div id="emailHelp" class="form-text">Por favor ingrese su contraseña para eliminar el usuario.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+                                <button type="button" id="show-password">Mostrar contraseña</button>
+                            </div>
+                            <button type="submit" id="deleteUserBtn" class="btn btn-danger">Borrar Usuario</button>
+                        </form>
+                        <button id="backbtn" class="btn btn-secondary">Atrás</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="/Controller/delete_user.js"></script>
+</body>
+
+</html>
