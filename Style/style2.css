@@ -12,32 +12,34 @@ body {
     font-family: Baskerville, serif;
 }
 
-.contenedor {
+.container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 10px;
-    width: 80%; 
-    max-width: 400px; 
-    height: auto; 
+    width: 80%;
+    max-width: 400px;
+    height: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
-.contenedor h2 {
+.container h1 {
     margin-bottom: 20px;
 }
 
-.contenedor h3 {
+.container h3 {
     margin-bottom: 10px;
 }
 
 input[type="text"],
 input[type="password"],
-button {
+input[type="date"],
+input[type="email"],
+select {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 15px;
@@ -46,8 +48,13 @@ button {
 }
 
 button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
     background-color: #1565c0;
     color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
