@@ -14,7 +14,7 @@ async function resetpass(){
     .then((verificar) => {
         
         alert('Reset password verification succefull' + email)
-        window.location.href="/Index.html"
+        window.location.href="/Templates/Home.html"
 
     })
     .catch((error) => {
@@ -33,5 +33,5 @@ boton.addEventListener('click', async(e)=>{
 })
 
 exit.addEventListener('click', function() {
-    window.location.href = "/Index.html";
+    window.location.href = "/index.html";
 })
