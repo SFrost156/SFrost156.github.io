@@ -1,76 +1,113 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background-image: url("/Resource/Images/fondo.png");
+    background-image: url("/Resource/Images/fondo.png"); 
     background-size: cover;
     background-position: center;
     color: #fff;
     font-family: Baskerville, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    text-align: center;
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    width: 90%;
+    max-width: 1200px;
 }
 
-.container h3 {
+h3 {
+    text-align: center;
     margin-bottom: 20px;
-    font-size: 24px;
+    color: #000; 
 }
 
 .table-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    overflow-x: auto;
 }
 
 .table-custom {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
+}
+
+.table-custom th, 
+.table-custom td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    color: #000; 
 }
 
 .table-custom th {
-    border: 2px solid #000;
-    background-color: #1565c0;
-    color: #fff;
-    padding: 10px;
+    background-color: #1565c0; 
+    color: white;
 }
 
-.table-custom td {
-    border: 2px solid #000;
-    padding: 10px;
+.table-custom tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #ddd;
+}
+
+.btn-primary {
+    background-color: #1565c0; 
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0d47a1; 
 }
 
 .modal-content {
-    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    color: #000; 
 }
 
-.modal-title {
-    color: #000;
+.modal-header {
+    background-color: #1565c0; 
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn-close {
+    color: #fff;
 }
 
 .form-label {
     color: #000;
 }
 
-.btn {
-    color: #fff;
-}
-
 #togglePassword {
-    background-color: #1565c0;
+    background-color: #1565c0; 
     color: #fff;
-    border-color: #1565c0;
 }
 
-#togglePassword:hover {
-    background-color: #0d47a1;
-    border-color: #0d47a1;
+.btn-danger {
+    background-color: #ff0000; 
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000; 
 }
