@@ -43,7 +43,8 @@
                     </div>
                     <div class="form-group">
                         <h3>Tipo de Sangre [RH]</h3>
-                        <select id="edtrh" required>
+                        <select id="edtrh" class="form-control" required>
+                            <option value="" selected disabled>Selecciona tu tipo de sangre [RH]</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -52,14 +53,17 @@
                             <option value="AB-">AB-</option>
                             <option value="O+">O+</option>
                             <option value="O-">O-</option>
+                            <option value="">Ninguno</option> <!-- Nueva opción vacía -->
                         </select>
                     </div>
                     <div class="form-group">
                         <h3>Género</h3>
-                        <select id="edtgnr" required>
+                        <select id="edtgnr" class="form-control" required>
+                            <option value="" selected disabled>Selecciona tu género</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Otro">Otro</option>
+                            <option value="">Ninguno</option> <!-- Nueva opción vacía -->
                         </select>
                     </div>
                     <div class="form-group">
@@ -90,10 +94,25 @@
                         <input type="password" id="confirmPassword" class="form-control" placeholder="Confirma tu contraseña" required>
                     </div>
                     <div class="alert alert-danger d-none" id="confirmPasswordAlert" role="alert">Por favor confirma tu contraseña.</div>
+
+                    <!-- Nuevo formulario para tipo de cuenta -->
+                    <div class="form-group">
+                        <h3>Tipo de Cuenta</h3>
+                        <select id="accountType" class="form-control" required>
+                            <option value="" selected disabled>Selecciona el tipo de cuenta</option>
+                            <option value="usuario">Cuenta de Usuario</option>
+                            <option value="administrador">Cuenta de Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-group d-none" id="adminPasswordGroup">
+                        <h3>Contraseña de Administrador</h3>
+                        <input type="text" id="adminPassword" class="form-control" placeholder="Ingresa la contraseña de administrador" disabled>
+                    </div>
+
                     <button id="rgsbtn" class="btn btn-primary" type="submit">Registrarse</button> <br>
                     <button type="button" id="show-password" class="btn btn-secondary">Mostrar contraseña</button> <br>
                     <div class="mt-3 text-center">
-                        <button href="/index.html" id="exitbtn" class="btn btn-danger">Iniciar Sesión</button> <br>
+                        <button type="button" id="exitbtn" class="btn btn-danger">Atras</button> <br>
                     </div>
                 </form>
               </div>
@@ -104,6 +123,29 @@
 
     <script type="module" src="/Controller/registro.js"></script>
     <script type="module" src="/Controller/add_users.js"></script>
+
+    <script>
+        // Obtener el campo de selección de tipo de cuenta
+        const accountTypeSelect = document.getElementById('accountType');
+
+        // Obtener el campo de contraseña de administrador
+        const adminPasswordInput = document.getElementById('adminPassword');
+
+        // Agregar un listener para el evento de cambio
+        accountTypeSelect.addEventListener('change', function() {
+            // Verificar si la opción seleccionada es 'administrador'
+            if (this.value === 'administrador') {
+                // Si es 'administrador', habilitar el campo de contraseña de administrador
+                adminPasswordInput.removeAttribute('disabled');
+                adminPasswordInput.setAttribute('required', 'required');
+            } else {
+                // Si no es 'administrador', deshabilitar y limpiar el campo de contraseña de administrador
+                adminPasswordInput.setAttribute('disabled', 'disabled');
+                adminPasswordInput.removeAttribute('required');
+                adminPasswordInput.value = ''; // Limpiar el valor del campo
+            }
+        });
+    </script>
 
 </body>
 </html>
