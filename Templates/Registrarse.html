@@ -125,24 +125,31 @@
     <script type="module" src="/Controller/add_users.js"></script>
 
     <script>
-        // Obtener el campo de selección de tipo de cuenta
+
+        const telefonoInput = document.getElementById('edttlf');
+
+        telefonoInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+
+        const cedulaInput = document.getElementById('edtcc');
+
+        cedulaInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+
         const accountTypeSelect = document.getElementById('accountType');
 
-        // Obtener el campo de contraseña de administrador
         const adminPasswordInput = document.getElementById('adminPassword');
 
-        // Agregar un listener para el evento de cambio
         accountTypeSelect.addEventListener('change', function() {
-            // Verificar si la opción seleccionada es 'administrador'
             if (this.value === 'administrador') {
-                // Si es 'administrador', habilitar el campo de contraseña de administrador
                 adminPasswordInput.removeAttribute('disabled');
                 adminPasswordInput.setAttribute('required', 'required');
             } else {
-                // Si no es 'administrador', deshabilitar y limpiar el campo de contraseña de administrador
                 adminPasswordInput.setAttribute('disabled', 'disabled');
                 adminPasswordInput.removeAttribute('required');
-                adminPasswordInput.value = ''; // Limpiar el valor del campo
+                adminPasswordInput.value = ''; 
             }
         });
     </script>
