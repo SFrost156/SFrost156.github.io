@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="/Style/regisitro_libro.css">
     <link rel="icon" href="/Resource/icons/logo.png">
-
     <title>Registro de Libro</title>
 </head>
 
 <body>
-
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
@@ -21,6 +18,7 @@
                     </div>
                     <div class="card-body">
                         <form id="Book-Form">
+                            <!-- Form groups here as before -->
                             <div class="form-group">
                                 <h3>Código del Libro</h3>
                                 <input type="text" id="codigolibro" class="form-control" placeholder="Ingresa el código del libro" required>
@@ -72,7 +70,8 @@
                             <div class="mt-3 text-center">
                                 <button id="registerBtn" class="btn btn-primary" type="submit">Registrar Libro</button>
                                 <br>
-                                <button type="button" id="exitBtn" class="btn btn-danger">Atrás</button> <br>
+                                <button type="button" id="exitBtn" class="btn btn-danger">Atrás</button>
+                                <button type="button" id="verLibrosBtn" class="btn btn-secondary mt-2">Ver Libros</button>
                             </div>
                         </form>
                     </div>
@@ -87,7 +86,9 @@
         document.getElementById("exitBtn").addEventListener("click", function() {
             window.location.href = "./Admin.html";
         });
+        document.getElementById("verLibrosBtn").addEventListener("click", function() {
+            window.location.href = "./VerLibros.html";
+        });
     </script>
-
 </body>
 </html>
