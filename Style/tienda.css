@@ -1,0 +1,122 @@
+/* Estilo del encabezado */
+.usuario {
+    background-color: rgba(62, 34, 139, 0.9); /* Fondo verde con transparencia */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #15138b; /* Tono de café */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de los botones */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-btn {
+    background-color: #13068b; /* Azul oscuro */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #0011ff; /* Azul más claro */
+    color: white;
+}
+
+/* Estilo del contenedor de los productos */
+.container-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo de las tarjetas de productos */
+.product-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    border: 2px solid #00f7ff; /* Azul neón */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    height: auto; /* Ajuste para que todas las tarjetas tengan la misma altura */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(2, 24, 124, 0.945);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card figure {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card figure img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.product-card .info-product {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.product-card .product-title {
+    color: black; /* Texto en negro */
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-card .product-price {
+    color: #131f8b; /* Azul oscuro */
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.product-card .add-to-cart {
+    background-color: #133d8b; /* Azul oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+    background-color: #10268a; /* Azul más claro */
+    color: white;
+}
+
+body {
+    font-family: "Cambria", sans-serif; /* Cambia la fuente a Cambria */
+    font-weight: bold; /* Asegura que se utilice la versión bold de la fuente */
+    margin: 0;
+    padding: 0;
+    background-image: url('https://m.media-amazon.com/images/I/613kOHd9whL._AC_SL1001_.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* Fija la imagen de fondo */
+    background-position: center;
+    background-color: #f8f8f8; /* Color de fondo pastel */
+    color: black;
+}
