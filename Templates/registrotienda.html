@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es_CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/Style/regisitro_libro.css">
+    <link rel="icon" href="/Resource/icons/logo.png">
+
+    <title>Registro de Libro</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Registro de Libro</h1>
+                    </div>
+                    <div class="card-body">
+                        <form id="Book-Form">
+                            <div class="form-group">
+                                <h3>Código del Libro</h3>
+                                <input type="text" id="codigolibro" class="form-control" placeholder="Ingresa el código del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Nombre</h3>
+                                <input type="text" id="nombre" class="form-control" placeholder="Ingresa el nombre del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Autor</h3>
+                                <input type="text" id="autor" class="form-control" placeholder="Ingresa el autor del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Editorial</h3>
+                                <input type="text" id="editorial" class="form-control" placeholder="Ingresa la editorial del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Formato</h3>
+                                <input type="text" id="formato" class="form-control" placeholder="Ingresa el formato del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Año</h3>
+                                <input type="text" id="año" class="form-control" placeholder="Ingresa el año de publicación del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Idioma</h3>
+                                <input type="text" id="idioma" class="form-control" placeholder="Ingresa el idioma del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Páginas</h3>
+                                <input type="number" id="paginas" class="form-control" placeholder="Ingresa el número de páginas del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Encuadernación</h3>
+                                <input type="text" id="encuadernacion" class="form-control" placeholder="Ingresa el tipo de encuadernación del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Precio</h3>
+                                <input type="number" id="precio" class="form-control" placeholder="Ingresa el precio del libro" required>
+                            </div>
+                            <div class="form-group">
+                                <h3>Reseña</h3>
+                                <textarea id="resena" class="form-control" placeholder="Escribe una reseña del libro" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <h3>Link de Imagen</h3>
+                                <input type="text" id="link" class="form-control" placeholder="Ingresa el enlace de la imagen del libro" required>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <button id="registerBtn" class="btn btn-primary" type="submit">Registrar Libro</button>
+                                <br>
+                                <button type="button" id="exitBtn" class="btn btn-danger">Atrás</button> <br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/Controller/registrotienda.js"></script>
+
+    <script>
+        document.getElementById("exitBtn").addEventListener("click", function() {
+            window.location.href = "./Admin.html";
+        });
+    </script>
+
+</body>
+</html>

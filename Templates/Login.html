@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es_CO">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/Style/Login.css">
+    <link rel="icon" href="/Resource/icons/logo.png">
+
+    
+    <title>Inicio de Sesión</title>
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h2>¡Bienvenido de nuevo!</h2>
+        
+        <h3>Correo electrónico:</h3>
+        
+        <input type="text" id="edtemail" placeholder=" "> 
+        
+        <h3>Contraseña</h3>
+        
+        <input type="password" id="edtpassword" placeholder=" "> 
+        
+        <button id="btnlogin" class="button-login" > Iniciar Sesión </button> 
+        
+        <button type="button" id="show-password">Mostrar contraseña</button>
+        
+        <button id="exitbtn" class="button-singup" > Atras </button>  
+        
+        <div>
+            <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint" data-your_own_param_1_to_login="any_value" data-your_own_param_2_to_login="any_value">
+                <button id="googlebtn" class="button-google" > Iniciar Sesion con Google </button> 
+            </div>
+            
+            <div>
+                <button type="button" id="facebookbtn" class="btn btn-primary">Iniciar Sesion con Facebook</button> 
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="module" src="/Controller/autentication.js"></script>
+    <script type="module" src="/Controller/authgoogle.js"></script>
+    <script type="module" src="/Controller/facebook.js"></script>
+    <script type="module" src="/Controller/Login.js"></script>
+    <script type="module" src="/Controller/vproducts.js"></script>
+
+</body>
+
+
+</html>
