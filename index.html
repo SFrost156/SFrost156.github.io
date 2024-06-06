@@ -1,57 +1,50 @@
 <!DOCTYPE html>
-<html lang="es_CO">
+<html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="/Style/style.css">
+    <!-- Enlace al CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="/Style/tienda.css">
+
+    <!-- Icono de la pestaña -->
     <link rel="icon" href="/Resource/icons/logo.png">
 
+    <title>Pagina Principal</title>
+
     
-    <title>Database</title>
-
 </head>
-
 <body>
-
-    <div class="contenedor">
-
-        <h2>¡Bienvenido de nuevo!</h2>
-        
-        <h3>Correo electrónico:</h3>
-        
-        <input type="text" id="edtemail" placeholder=" "> 
-        
-        <h3>Contraseña</h3>
-        
-        <input type="password" id="edtpassword" placeholder=" "> 
-        
-        <button id="loginbtn" class="button-login" > Iniciar Sesión </button> 
-        
-        <button type="button" id="show-password">Mostrar contraseña</button>
-        
-        <button id="signbtn" class="button-singup" > Registrarse </button>  
-        
-        <div>
-            <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint" data-your_own_param_1_to_login="any_value" data-your_own_param_2_to_login="any_value">
-                <button id="googlebtn" class="button-google" > Iniciar Sesion con Google </button> 
+    <!-- Contenido de tu página -->
+    <div class="container mt-5">
+        <div class="usuario text-white text-center">
+            <h1>Tienda Principal</h1>
+            <div class="search-bar mt-4">
+                <div class="input-group mb-3">
+                    <input type="text" id="search-input" class="form-control" placeholder="Buscar productos..." />
+                    <button class="btn btn-outline-light" id="search-btn">Buscar</button>
+                </div>
             </div>
-            
-            <div>
-                <button type="button" id="facebookbtn" class="btn btn-primary">Iniciar Sesion con Facebook</button> 
+            <div class="btn-container d-flex justify-content-center mt-3">
+                <button id="loginbtn" class="btn btn-primary mx-2 custom-btn">Iniciar Sesión</button>
+                <button id="signbtn" class="btn btn-success mx-2 custom-btn">Registrarse</button>
             </div>
         </div>
         
+        <div class="container-items d-flex flex-wrap justify-content-center" id="product-list">
+            <!-- Tarjetas de productos se insertarán aquí -->
+        </div>
     </div>
 
-    <script type="module" src="/Controller/autentication.js"></script>
-    <script type="module" src="/Controller/authgoogle.js"></script>
-    <script type="module" src="/Controller/facebook.js"></script>
-    <script type="module" src="/Controller/index.js"></script>
-    <script type="module" src="/Controller/vproducts.js"></script>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Tus scripts personalizados -->
+    <script type="module" src="/Controller/tienda.js"></script>
+    <script type="module" src="/Controller/tienda2.js"></script>
+    <script type="module" src="/Controller/search.js"></script>
 </body>
-
-
 </html>
