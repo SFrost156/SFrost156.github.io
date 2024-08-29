@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partidos - Futboleros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Styles/futboleros.css">
+  <link rel="icon" href="/Resource/escudo-unitropico_1.png">
+</head>
+<body>
+  <div class="container mt-4">
+    <!-- Contenedor para las alertas -->
+    <div id="alertContainer"></div>
+
+    <!-- Título y Botones de Navegación -->
+    <div class="mb-4">
+      <img src="/Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
+      <h1>Torneo de Robótica de Unitropico</h1>
+      <h1>Categoria de Futboleros</h1>
+      <div class="btn-group" role="group" aria-label="Botones de Navegación">
+        <a href="/index.html" class="btn btn-secondary">Inicio</a>
+        <a href="/Templates/mini_sumo.html" class="btn btn-secondary">Mini-Sumo</a>
+        <a href="/Templates/velocistas.html" class="btn btn-secondary">Velocistas</a>
+      </div>
+    </div>
+
+    <!-- Tabla original de Robots -->
+    <h2>Tabla de Robots</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Robot</th>
+          <th>Institución</th>
+        </tr>
+      </thead>
+      <tbody id="robotsTableBody">
+        <!-- Aquí se agregarán dinámicamente las filas con los robots -->
+      </tbody>
+    </table>
+
+    <!-- Tabla para mostrar los datos de los Partidos -->
+    <h2>Tabla de Partidos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo 1</th>
+          <th>Puntos Equipo 1</th>
+          <th>Equipo 2</th>
+          <th>Puntos Equipo 2</th>
+          <th>Tiempo</th>
+          <th>Ganador</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="partidosTableBody">
+        <!-- Aquí se agregarán dinámicamente las filas con los partidos -->
+      </tbody>
+    </table>
+
+    <!-- Botón para abrir el modal de "Añadir Partido" -->
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#partidoModal">
+      Añadir Partido
+    </button>
+
+    <!-- Modal para añadir un nuevo partido -->
+    <div class="modal fade" id="partidoModal" tabindex="-1" aria-labelledby="partidoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="partidoModalLabel">Añadir Partido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="partidoForm">
+              <div class="mb-3">
+                <label for="equipo1" class="form-label">Equipo 1</label>
+                <select class="form-select" id="equipo1" required></select>
+              </div>
+              <div class="mb-3">
+                <label for="puntosEquipo1" class="form-label">Puntos Equipo 1</label>
+                <input type="number" class="form-control" id="puntosEquipo1" required>
+              </div>
+              <div class="mb-3">
+                <label for="equipo2" class="form-label">Equipo 2</label>
+                <select class="form-select" id="equipo2" required></select>
+              </div>
+              <div class="mb-3">
+                <label for="puntosEquipo2" class="form-label">Puntos Equipo 2</label>
+                <input type="number" class="form-control" id="puntosEquipo2" required>
+              </div>
+              <div class="mb-3">
+                <label for="tiempo" class="form-label">Tiempo</label>
+                <input type="text" class="form-control" id="tiempo" required>
+              </div>
+              <div class="mb-3">
+                <label for="ganador" class="form-label">Ganador</label>
+                <select class="form-select" id="ganador" required></select>
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar Partido</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para editar un partido -->
+    <div class="modal fade" id="editarPartidoModal" tabindex="-1" aria-labelledby="editarPartidoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editarPartidoModalLabel">Editar Partido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editarPartidoForm">
+              <input type="hidden" id="editPartidoId"> <!-- Campo oculto para el ID del partido -->
+              <div class="mb-3">
+                <label for="editEquipo1" class="form-label">Equipo 1</label>
+                <select class="form-select" id="editEquipo1" required></select>
+              </div>
+              <div class="mb-3">
+                <label for="editPuntosEquipo1" class="form-label">Puntos Equipo 1</label>
+                <input type="number" class="form-control" id="editPuntosEquipo1" required>
+              </div>
+              <div class="mb-3">
+                <label for="editEquipo2" class="form-label">Equipo 2</label>
+                <select class="form-select" id="editEquipo2" required></select>
+              </div>
+              <div class="mb-3">
+                <label for="editPuntosEquipo2" class="form-label">Puntos Equipo 2</label>
+                <input type="number" class="form-control" id="editPuntosEquipo2" required>
+              </div>
+              <div class="mb-3">
+                <label for="editTiempo" class="form-label">Tiempo</label>
+                <input type="text" class="form-control" id="editTiempo" required>
+              </div>
+              <div class="mb-3">
+                <label for="editGanador" class="form-label">Ganador</label>
+                <select class="form-select" id="editGanador" required></select>
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para confirmar eliminación -->
+    <div class="modal fade" id="eliminarPartidoModal" tabindex="-1" aria-labelledby="eliminarPartidoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eliminarPartidoModalLabel">Eliminar Partido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Estás seguro de que deseas eliminar este partido?</p>
+            <input type="hidden" id="deletePartidoId"> <!-- Campo oculto para el ID del partido -->
+            <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Incluye el script de Bootstrap -->
+    <script type="module" src="/Controller/futboleros.js"></script> <!-- Enlace al archivo JS separado -->
+  </div>
+</body>
+</html>

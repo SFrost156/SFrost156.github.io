@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partidos - Velocistas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Styles/velocistas.css">
+  <link rel="icon" href="/Resource/escudo-unitropico_1.png">
+</head>
+<body>
+  <div class="container mt-4">
+    <!-- Contenedor para las alertas -->
+    <div id="alertContainer"></div>
+
+    <!-- Título y Botones de Navegación -->
+    <div class="mb-4">
+      <img src="/Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
+      <h1>Torneo de Robótica de Unitropico</h1>
+      <h1>Categoria de Velocistas</h1>
+      <div class="btn-group" role="group" aria-label="Botones de Navegación">
+        <a href="/index.html" class="btn btn-secondary">Inicio</a>
+        <a href="/Templates/mini_sumo.html" class="btn btn-secondary">Mini-Sumo</a>
+        <a href="/Templates/futboleros.html" class="btn btn-secondary">Futboleros</a>
+      </div>
+    </div>
+
+    <!-- Tabla de Robots -->
+    <h2>Tabla de Robots</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Robot</th>
+          <th>Institución</th>
+        </tr>
+      </thead>
+      <tbody id="robotsTableBody">
+        <!-- Aquí se agregarán dinámicamente las filas con los robots -->
+      </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Incluye el script de Bootstrap -->
+    <script type="module" src="/Controller/velocistas.js"></script> <!-- Enlace al archivo JS separado -->
+  </div>
+</body>
+</html>
