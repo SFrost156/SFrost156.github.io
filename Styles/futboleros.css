@@ -1,0 +1,225 @@
+/* Importando la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Definiendo las variables de color */
+:root {
+  --pantone-329cp: #004e4d; /* Verde oscuro */
+  --pantone-4515cp: #bfa980; /* Marrón claro */
+  --white-color: #ffffff; /* Blanco */
+  --led-color: #00ffab; /* Color LED verde */
+  --led-shadow: rgba(0, 255, 171, 0.5); /* Sombra LED */
+  --shadow-color: rgba(0, 0, 0, 0.2); /* Sombra general */
+  --button-color: #003a39; /* Color para los botones */
+}
+
+/* Fondo degradado en el body */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, var(--pantone-329cp), var(--pantone-4515cp));
+  color: var(--white-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+  position: relative;
+}
+
+/* Efecto LED en el contorno de las tablas */
+.table {
+  background-color: var(--white-color);
+  color: var(--pantone-329cp);
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  border: 2px solid var(--led-color);
+  box-shadow: 0 0 15px var(--led-shadow), 0 0 30px var(--led-shadow);
+  animation: led-glow 1.5s infinite alternate;
+}
+
+@keyframes led-glow {
+  0% {
+    box-shadow: 0 0 15px var(--led-shadow), 0 0 30px var(--led-shadow);
+  }
+  100% {
+    box-shadow: 0 0 30px var(--led-shadow), 0 0 60px var(--led-shadow);
+  }
+}
+
+/* Encabezados */
+h1,h2,p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--pantone-329cp);
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Subtítulos */
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--white-color); /* Blanco */
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+/* Botones principales con efecto LED */
+.btn-secondary {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px var(--led-shadow), 0 0 30px var(--led-shadow);
+  animation: led-glow 1.5s infinite alternate;
+}
+
+.btn-secondary:hover {
+  background-color: #002828;
+  border-color: #002828;
+  box-shadow: 0 0 30px var(--led-shadow), 0 0 60px var(--led-shadow);
+}
+
+/* Centrando los botones de navegación */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+/* Tablas */
+.table thead {
+  background-color: var(--pantone-329cp);
+  color: var(--white-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table tbody tr {
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform 0.2s;
+}
+
+.table tbody tr:hover {
+  transform: translateY(-5px);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: var(--pantone-4515cp);
+}
+
+/* Modales */
+.modal-content {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.modal-header {
+  background-color: var(--pantone-329cp);
+  color: var(--white-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  animation: led-glow 1.5s infinite alternate;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #002828;
+  border-color: #002828;
+}
+
+/* Formularios */
+.form-label {
+  color: var(--pantone-329cp);
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid var(--pantone-329cp);
+  border-radius: 10px;
+  color: var(--pantone-329cp);
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: var(--pantone-329cp);
+  box-shadow: 0 0 10px var(--led-shadow);
+}
+
+input::placeholder {
+  color: var(--pantone-4515cp);
+}
+
+/* Botón de cerrar modal */
+.btn-close {
+  background-color: var(--pantone-329cp);
+  border: none;
+  opacity: 0.8;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Modal para eliminar registro */
+#eliminarModal .modal-content {
+  background-color: var(--pantone-329cp); /* Fondo oscuro */
+  color: var(--white-color); /* Texto en blanco para mejor contraste */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+#eliminarModal .modal-header {
+  background-color: var(--pantone-329cp);
+  color: var(--white-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#eliminarModal .modal-body {
+  color: var(--white-color); /* Texto blanco */
+  font-weight: bold; /* Resalta el mensaje de eliminación */
+}
+
+#eliminarModal .modal-footer .btn-danger {
+  background-color: #ff4c4c;
+  border-color: #ff4c4c;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 76, 76, 0.5), 0 0 30px rgba(255, 76, 76, 0.5);
+}
+
+#eliminarModal .modal-footer .btn-danger:hover {
+  background-color: #e43e3e;
+  border-color: #e43e3e;
+  box-shadow: 0 0 30px rgba(255, 76, 76, 0.5), 0 0 60px rgba(255, 76, 76, 0.5);
+}
