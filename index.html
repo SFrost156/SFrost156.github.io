@@ -1,50 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Enlace al CSS de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Tu CSS personalizado -->
-    <link rel="stylesheet" href="/Style/tienda.css">
-
-    <!-- Icono de la pestaña -->
-    <link rel="icon" href="/Resource/icons/logo.png">
-
-    <title>Pagina Principal</title>
-
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Robots</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="module" src="Controller/index.js" defer></script>
+  <link rel="stylesheet" href="Styles/index.css">
+  <link rel="icon" href="/Resource/escudo-unitropico_1.png">
+  
 </head>
 <body>
-    <!-- Contenido de tu página -->
-    <div class="container mt-5">
-        <div class="usuario text-white text-center">
-            <h1>Tienda Principal</h1>
-            <div class="search-bar mt-4">
-                <div class="input-group mb-3">
-                    <input type="text" id="search-input" class="form-control" placeholder="Buscar productos..." />
-                    <button class="btn btn-outline-light" id="search-btn">Buscar</button>
-                </div>
-            </div>
-            <div class="btn-container d-flex justify-content-center mt-3">
-                <button id="loginbtn" class="btn btn-primary mx-2 custom-btn">Iniciar Sesión</button>
-                <button id="signbtn" class="btn btn-success mx-2 custom-btn">Registrarse</button>
-            </div>
+  <div class="container mt-4">
+    <div class="container mt-4">
+    <!-- Título y Botones de Navegación -->
+      <div class="mb-4">
+        <img src="Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
+        <h1>Torneo de Robótica de Unitropico</h1>
+        <div class="btn-group" role="group" aria-label="Botones de Navegación">
+          <a href="/Templates/mini_sumo.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/mini_sumo.html')">Mini-Sumo</a>
+          <a href="/Templates/velocistas.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/velocistas.html')">Velocistas</a>
+          <a href="/Templates/futboleros.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/futboleros.html')">Futboleros</a>
         </div>
-        
-        <div class="container-items d-flex flex-wrap justify-content-center" id="product-list">
-            <!-- Tarjetas de productos se insertarán aquí -->
+      </div>
+
+      <script>
+      function navigateToPage(event, url) {
+        event.preventDefault(); // Evita el comportamiento por defecto del enlace
+        window.location.href = url; // Cambia la URL de la página actual a la nueva
+      }
+      </script>
+
+    <h1>Robots Velocistas</h1>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#registroModal">Agregar Registro</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Robot</th>
+          <th>Institución</th>
+          <th>Asistencia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="registrosTabla">
+        <!-- Los registros se llenarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+    
+    <h1>Mini-Sumos</h1>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#registroMiniSumoModal">Agregar Registro Mini-Sumo</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Robot</th>
+          <th>Institución</th>
+          <th>Asistencia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="miniSumosTabla">
+        <!-- Los registros se llenarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+
+    <h1>Futboleros</h1>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#registroFutbolerosModal">Agregar Registro Futboleros</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Equipo</th>
+          <th>Robot</th>
+          <th>Institución</th>
+          <th>Asistencia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="futbolerosTabla">
+        <!-- Los registros se llenarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal para agregar registro -->
+  <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registroModalLabel">Agregar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="equipo" class="form-label">Equipo</label>
+              <input type="text" id="equipo" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="robot" class="form-label">Robot</label>
+              <input type="text" id="robot" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="institucion" class="form-label">Institución</label>
+              <input type="text" id="institucion" class="form-control" required>
+            </div>
+            <button type="button" id="guardarBtn" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Scripts de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Modal para agregar registro Mini-Sumo -->
+  <div class="modal fade" id="registroMiniSumoModal" tabindex="-1" aria-labelledby="registroMiniSumoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registroMiniSumoModalLabel">Agregar Registro Mini-Sumo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="equipoMiniSumo" class="form-label">Equipo</label>
+              <input type="text" id="equipoMiniSumo" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="robotMiniSumo" class="form-label">Robot</label>
+              <input type="text" id="robotMiniSumo" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="institucionMiniSumo" class="form-label">Institución</label>
+              <input type="text" id="institucionMiniSumo" class="form-control" required>
+            </div>
+            <button type="button" id="guardarMiniSumoBtn" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Tus scripts personalizados -->
-    <script type="module" src="/Controller/tienda.js"></script>
-    <script type="module" src="/Controller/tienda2.js"></script>
-    <script type="module" src="/Controller/search.js"></script>
+  <!-- Modal para agregar registro Futboleros -->
+  <div class="modal fade" id="registroFutbolerosModal" tabindex="-1" aria-labelledby="registroFutbolerosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registroFutbolerosModalLabel">Agregar Registro Futboleros</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="equipoFutboleros" class="form-label">Equipo</label>
+              <input type="text" id="equipoFutboleros" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="robotFutboleros" class="form-label">Robot</label>
+              <input type="text" id="robotFutboleros" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="institucionFutboleros" class="form-label">Institución</label>
+              <input type="text" id="institucionFutboleros" class="form-control" required>
+            </div>
+            <button type="button" id="guardarFutbolerosBtn" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para editar registro -->
+  <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarModalLabel">Editar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="editarEquipo" class="form-label">Equipo</label>
+              <input type="text" id="editarEquipo" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="editarRobot" class="form-label">Robot</label>
+              <input type="text" id="editarRobot" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="editarInstitucion" class="form-label">Institución</label>
+              <input type="text" id="editarInstitucion" class="form-control" required>
+            </div>
+            <button type="button" id="editarBtn" class="btn btn-primary">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para eliminar registro -->
+  <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eliminarModalLabel">Eliminar Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro de que quieres eliminar este registro?</p>
+          <button type="button" id="confirmarEliminarBtn" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
