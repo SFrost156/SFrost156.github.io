@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carreras de Robots</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Styles/velocistas.css">
+  <link rel="icon" href="/Resource/escudo-unitropico_1.png">
+</head>
+<body>
+  <div class="container mt-4">
+    <!-- Contenedor para las alertas -->
+    <div id="contenedorAlertas"></div>
+
+    <!-- Título y Botones de Navegación -->
+    <div class="mb-4">
+      <img src="/Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
+      <h1>Torneo de Robótica de Unitropico</h1>
+      <h1>Carreras de Robots</h1>
+      <div class="btn-group" role="group" aria-label="Botones de Navegación">
+        <a href="/index.html" class="btn btn-secondary">Inicio</a>
+        <a href="/Templates/velocistas.html" class="btn btn-secondary">Velocistas</a>
+        <a href="/Templates/mini_sumo.html" class="btn btn-secondary">Mini-Sumo</a>
+        <a href="/Templates/futboleros.html" class="btn btn-secondary">Futboleros</a>
+        <a href="/Templates/ganadores.html" class="btn btn-secondary">Ganadores</a>
+      </div>
+    </div>
+
+    <!-- Botón para abrir el modal -->
+    <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#modalAñadirCarrera">
+      Añadir Carrera
+    </button>
+
+    <!-- Modal para añadir carrera -->
+    <div class="modal fade" id="modalAñadirCarrera" tabindex="-1" aria-labelledby="modalAñadirCarreraLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAñadirCarreraLabel">Añadir Carrera</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="selectorRobot1" class="form-label">Robot 1</label>
+                <select id="selectorRobot1" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="selectorRobot2" class="form-label">Robot 2</label>
+                <select id="selectorRobot2" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="ganadorCarrera" class="form-label">Ganador</label>
+                <select id="ganadorCarrera" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <button type="button" id="guardarCarreraBtn" class="btn btn-primary">Guardar Carrera</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para editar carrera -->
+    <div class="modal fade" id="modalEditarCarrera" tabindex="-1" aria-labelledby="modalEditarCarreraLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEditarCarreraLabel">Editar Carrera</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="selectorRobot1Editar" class="form-label">Robot 1</label>
+                <select id="selectorRobot1Editar" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="selectorRobot2Editar" class="form-label">Robot 2</label>
+                <select id="selectorRobot2Editar" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="ganadorCarreraEditar" class="form-label">Ganador</label>
+                <select id="ganadorCarreraEditar" class="form-select" required>
+                  <!-- Opciones serán agregadas dinámicamente -->
+                </select>
+              </div>
+              <button type="button" id="editarCarreraBtn" class="btn btn-primary">Actualizar Carrera</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para eliminar carrera -->
+    <div class="modal fade" id="modalEliminarCarrera" tabindex="-1" aria-labelledby="modalEliminarCarreraLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEliminarCarreraLabel">Eliminar Carrera</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>¿Estás seguro de que quieres eliminar esta carrera?</h2>
+            <button type="button" id="confirmarEliminarCarreraBtn" class="btn btn-danger">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de Carreras -->
+    <h2 class="mt-5">Tabla de Carreras</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Robot 1</th>
+          <th>Robot 2</th>
+          <th>Ganador</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTablaCarreras">
+        <!-- Aquí se agregarán dinámicamente las filas con las carreras -->
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/Controller/carreras.js"></script>
+  </div>
+</body>
+</html>

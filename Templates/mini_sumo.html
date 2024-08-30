@@ -10,10 +10,8 @@
 </head>
 <body>
   <div class="container mt-4">
-    <!-- Contenedor para las alertas -->
     <div id="alertContainer"></div>
 
-    <!-- Título y Botones de Navegación -->
     <div class="mb-4">
       <img src="/Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
       <h1>Torneo de Robótica de Unitropico</h1>
@@ -21,11 +19,12 @@
       <div class="btn-group" role="group" aria-label="Botones de Navegación">
         <a href="/index.html" class="btn btn-secondary">Inicio</a>
         <a href="/Templates/velocistas.html" class="btn btn-secondary">Velocistas</a>
+        <a href="/Templates/velocistas2.html" class="btn btn-secondary">Velocistas Segunda Ronda</a>
         <a href="/Templates/futboleros.html" class="btn btn-secondary">Futboleros</a>
+        <a href="/Templates/ganadores.html" class="btn btn-secondary">Ganadores</a>
       </div>
     </div>
 
-    <!-- Tabla para mostrar los datos originales de MiniSumos -->
     <h2>Tabla de MiniSumos</h2>
     <table class="table table-striped">
       <thead>
@@ -37,17 +36,14 @@
         </tr>
       </thead>
       <tbody id="miniSumosTableBody">
-        <!-- Aquí se agregarán dinámicamente las filas con los datos -->
       </tbody>
     </table>
 
-    <!-- Botón para abrir el modal de "Primera Ronda" -->
     <h2>Tabla de Primera Ronda</h2>
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#primeraRondaModal">
       Añadir Batalla de Primera Ronda
     </button>
 
-    <!-- Tabla para mostrar las batallas de "Primera Ronda" -->
     <table class="table table-striped">
       <thead>
         <tr>
@@ -61,17 +57,14 @@
         </tr>
       </thead>
       <tbody id="primeraRondaTableBody">
-        <!-- Aquí se agregarán dinámicamente las filas con las batallas -->
       </tbody>
     </table>
 
-    <!-- Botón para abrir el modal de "Segunda Ronda" -->
     <h2>Tabla de Segunda Ronda</h2>
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#segundaRondaModal">
       Añadir Batalla de Segunda Ronda
     </button>
 
-    <!-- Tabla para mostrar las batallas de "Segunda Ronda" -->
     <table class="table table-striped">
       <thead>
         <tr>
@@ -85,17 +78,14 @@
         </tr>
       </thead>
       <tbody id="segundaRondaTableBody">
-        <!-- Aquí se agregarán dinámicamente las filas con las batallas -->
       </tbody>
     </table>
 
-    <!-- Botón para abrir el modal de "Tercera Ronda" -->
     <h2>Tabla de Tercera Ronda</h2>
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#terceraRondaModal">
       Añadir Batalla de Tercera Ronda
     </button>
 
-    <!-- Tabla para mostrar las batallas de "Tercera Ronda" -->
     <table class="table table-striped">
       <thead>
         <tr>
@@ -109,11 +99,9 @@
         </tr>
       </thead>
       <tbody id="terceraRondaTableBody">
-        <!-- Aquí se agregarán dinámicamente las filas con las batallas -->
       </tbody>
     </table>
 
-    <!-- Modal para añadir batallas de "Primera Ronda" -->
     <div class="modal fade" id="primeraRondaModal" tabindex="-1" aria-labelledby="primeraRondaModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -150,7 +138,6 @@
       </div>
     </div>
 
-    <!-- Modal para editar batallas de "Primera Ronda" -->
     <div class="modal fade" id="editarBatallaModal" tabindex="-1" aria-labelledby="editarBatallaModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -160,7 +147,7 @@
           </div>
           <div class="modal-body">
             <form id="editarBatallaForm">
-              <input type="hidden" id="editBattleId"> <!-- Campo oculto para el ID de la batalla -->
+              <input type="hidden" id="editBattleId"> 
               <div class="mb-3">
                 <label for="editRobot1" class="form-label">Nombre del Robot 1</label>
                 <input type="text" class="form-control" id="editRobot1" required>
@@ -188,7 +175,6 @@
       </div>
     </div>
 
-    <!-- Modal para añadir batallas de "Segunda Ronda" -->
     <div class="modal fade" id="segundaRondaModal" tabindex="-1" aria-labelledby="segundaRondaModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -225,7 +211,6 @@
       </div>
     </div>
 
-    <!-- Modal para editar batallas de "Segunda Ronda" -->
     <div class="modal fade" id="editarBatalla2Modal" tabindex="-1" aria-labelledby="editarBatalla2ModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -235,7 +220,7 @@
           </div>
           <div class="modal-body">
             <form id="editarBatalla2Form">
-              <input type="hidden" id="editBattle2Id"> <!-- Campo oculto para el ID de la batalla -->
+              <input type="hidden" id="editBattle2Id"> 
               <div class="mb-3">
                 <label for="editRobot1_2" class="form-label">Nombre del Robot 1</label>
                 <input type="text" class="form-control" id="editRobot1_2" required>
@@ -263,7 +248,6 @@
       </div>
     </div>
 
-    <!-- Modal para añadir batallas de "Tercera Ronda" -->
     <div class="modal fade" id="terceraRondaModal" tabindex="-1" aria-labelledby="terceraRondaModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -300,7 +284,6 @@
       </div>
     </div>
 
-    <!-- Modal para editar batallas de "Tercera Ronda" -->
     <div class="modal fade" id="editarBatalla3Modal" tabindex="-1" aria-labelledby="editarBatalla3ModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -310,7 +293,7 @@
           </div>
           <div class="modal-body">
             <form id="editarBatalla3Form">
-              <input type="hidden" id="editBattle3Id"> <!-- Campo oculto para el ID de la batalla -->
+              <input type="hidden" id="editBattle3Id"> 
               <div class="mb-3">
                 <label for="editRobot1_3" class="form-label">Nombre del Robot 1</label>
                 <input type="text" class="form-control" id="editRobot1_3" required>
@@ -338,7 +321,6 @@
       </div>
     </div>
 
-    <!-- Modal para confirmar eliminación de Primera Ronda -->
     <div class="modal fade" id="eliminarBatallaModal" tabindex="-1" aria-labelledby="eliminarBatallaModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -348,7 +330,7 @@
           </div>
           <div class="modal-body">
             <p>¿Estás seguro de que deseas eliminar esta batalla?</p>
-            <input type="hidden" id="deleteBattleId"> <!-- Campo oculto para el ID de la batalla -->
+            <input type="hidden" id="deleteBattleId"> 
             <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
           </div>
         </div>
@@ -356,7 +338,6 @@
     </div>
 
 
-    <!-- Modal para confirmar eliminación de Segunda Ronda -->
     <div class="modal fade" id="eliminarBatalla2Modal" tabindex="-1" aria-labelledby="eliminarBatalla2ModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -366,14 +347,13 @@
           </div>
           <div class="modal-body">
             <p>¿Estás seguro de que deseas eliminar esta batalla?</p>
-            <input type="hidden" id="deleteBattle2Id"> <!-- Campo oculto para el ID de la batalla -->
+            <input type="hidden" id="deleteBattle2Id"> 
             <button type="button" class="btn btn-danger" id="confirmDelete2Button">Eliminar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal para confirmar eliminación de Tercera Ronda -->
     <div class="modal fade" id="eliminarBatalla3Modal" tabindex="-1" aria-labelledby="eliminarBatalla3ModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -383,15 +363,15 @@
           </div>
           <div class="modal-body">
             <p>¿Estás seguro de que deseas eliminar esta batalla?</p>
-            <input type="hidden" id="deleteBattle3Id"> <!-- Campo oculto para el ID de la batalla -->
+            <input type="hidden" id="deleteBattle3Id"> 
             <button type="button" class="btn btn-danger" id="confirmDelete3Button">Eliminar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Incluye el script de Bootstrap -->
-    <script type="module" src="/Controller/mini_sumo.js"></script> <!-- Enlace al archivo JS separado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <script type="module" src="/Controller/mini_sumo.js"></script> 
   </div>
 </body>
 </html>
