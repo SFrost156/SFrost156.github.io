@@ -13,21 +13,23 @@
 <body>
   <div class="container mt-4">
     <div class="container mt-4">
-    <!-- Título y Botones de Navegación -->
+
       <div class="mb-4">
         <img src="Resource/logo-simbolo-unitropico-1.png" alt="Logo" class="me-3" style="width: 400px; height: 100px;">        
         <h1>Torneo de Robótica de Unitropico</h1>
         <div class="btn-group" role="group" aria-label="Botones de Navegación">
-          <a href="/Templates/mini_sumo.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/mini_sumo.html')">Mini-Sumo</a>
-          <a href="/Templates/velocistas.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/velocistas.html')">Velocistas</a>
-          <a href="/Templates/futboleros.html" class="btn btn-secondary" onclick="navigateToPage(event, '/Templates/futboleros.html')">Futboleros</a>
+          <a href="/Templates/velocistas.html" class="btn btn-secondary">Velocistas</a>
+          <a href="/Templates/velocistas2.html" class="btn btn-secondary">Velocistas Segunda Ronda</a>
+          <a href="/Templates/mini_sumo.html" class="btn btn-secondary">Mini-Sumo</a>
+          <a href="/Templates/futboleros.html" class="btn btn-secondary">Futboleros</a>
+          <a href="/Templates/ganadores.html" class="btn btn-secondary">Ganadores</a>
         </div>
       </div>
 
       <script>
       function navigateToPage(event, url) {
-        event.preventDefault(); // Evita el comportamiento por defecto del enlace
-        window.location.href = url; // Cambia la URL de la página actual a la nueva
+        event.preventDefault(); 
+        window.location.href = url; 
       }
       </script>
 
@@ -45,7 +47,6 @@
         </tr>
       </thead>
       <tbody id="registrosTabla">
-        <!-- Los registros se llenarán aquí mediante JavaScript -->
       </tbody>
     </table>
     
@@ -63,7 +64,6 @@
         </tr>
       </thead>
       <tbody id="miniSumosTabla">
-        <!-- Los registros se llenarán aquí mediante JavaScript -->
       </tbody>
     </table>
 
@@ -81,12 +81,10 @@
         </tr>
       </thead>
       <tbody id="futbolerosTabla">
-        <!-- Los registros se llenarán aquí mediante JavaScript -->
       </tbody>
     </table>
   </div>
 
-  <!-- Modal para agregar registro -->
   <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -115,7 +113,6 @@
     </div>
   </div>
 
-  <!-- Modal para agregar registro Mini-Sumo -->
   <div class="modal fade" id="registroMiniSumoModal" tabindex="-1" aria-labelledby="registroMiniSumoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -144,7 +141,6 @@
     </div>
   </div>
 
-  <!-- Modal para agregar registro Futboleros -->
   <div class="modal fade" id="registroFutbolerosModal" tabindex="-1" aria-labelledby="registroFutbolerosModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -173,7 +169,6 @@
     </div>
   </div>
 
-  <!-- Modal para editar registro -->
   <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -202,7 +197,6 @@
     </div>
   </div>
 
-  <!-- Modal para eliminar registro -->
   <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
